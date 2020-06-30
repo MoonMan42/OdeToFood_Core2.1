@@ -29,12 +29,19 @@ namespace OdeToFood.Data
                    select r;
         }
 
+
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
                    where string.IsNullOrEmpty(name) || r.Name.ToLower().StartsWith(name.ToLower())
                    orderby r.Name
                    select r;
+        }
+
+        public Restaurant GetRestaurantsById(int Id)
+        {
+            return restaurants.SingleOrDefault(r => r.Id == Id);
         }
     }
 }
