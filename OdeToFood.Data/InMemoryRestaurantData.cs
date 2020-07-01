@@ -62,5 +62,14 @@ namespace OdeToFood.Data
         {
             return 0; // not for in-memory
         }
+
+        public Restaurant Add(Restaurant newRestaurant)
+        {
+            restaurants.Add(newRestaurant);
+
+            newRestaurant.Id = restaurants.Max(r => r.Id) + 1;
+
+            return newRestaurant;
+        }
     }
 }

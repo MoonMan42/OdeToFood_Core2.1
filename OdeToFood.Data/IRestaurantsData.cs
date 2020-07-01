@@ -9,6 +9,7 @@ namespace OdeToFood.Data
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetRestaurantsById(int Id);
         Restaurant Update(Restaurant restaurant);
+        Restaurant Add(Restaurant newRestaurant);
         int Commit(); // Commit to db
     }
 }
