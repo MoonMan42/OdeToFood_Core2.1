@@ -10,6 +10,9 @@ namespace OdeToFood.Data
         Restaurant GetRestaurantsById(int Id);
         Restaurant Update(Restaurant restaurant);
         Restaurant Add(Restaurant newRestaurant);
+        Restaurant Delete(int Id);
+
         int Commit(); // Commit to db
     }
+
 }
