@@ -37,11 +37,6 @@ namespace OdeToFood.Data
             return restaurant;
         }
 
-        public IEnumerable<Restaurant> GetAllRestaurants()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Restaurant GetRestaurantsById(int Id)
         {
             return _context.Restaurants.Find(Id);
@@ -50,7 +45,7 @@ namespace OdeToFood.Data
         public IEnumerable<Restaurant> GetRestaurantsByName(string name)
         {
             var query = from r in _context.Restaurants
-                        where r.Name.ToLower().StartsWith(name.ToLower()) || string.IsNullOrEmpty(name)
+                        where string.IsNullOrEmpty(name) || r.Name.ToLower().StartsWith(name.ToLower())
                         orderby r.Name
                         select r;
 
